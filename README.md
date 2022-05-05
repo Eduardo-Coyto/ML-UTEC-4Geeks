@@ -19,7 +19,7 @@ Este comando creará una rama en local. Para enviar (push) la nueva rama al repo
 **git push <nombre-remoto> <nombre-rama>**  
 
   
-Visualización de ramas
+_Visualización de ramas_
 
   
 **git branch
