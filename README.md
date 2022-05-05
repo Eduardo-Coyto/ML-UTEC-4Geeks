@@ -40,3 +40,7 @@ git branch -d <nombre-de-la-rama>
 git checkout <nombre-de-la-rama>
 
 ## Git status  
+  
+ - El comando de git status nos da toda la información necesaria sobre la rama actual
+  
+  ** git status
