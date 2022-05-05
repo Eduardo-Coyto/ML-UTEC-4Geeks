@@ -7,7 +7,7 @@
 **git clone <https://link-con-nombre-del-repositorio>
 
 ## Git branch
-Usando ramas, varios desarrolladores pueden trabajar en paralelo en el mismo proyecto simultáneamente. Podemos usar el comando git branch para crearlas, listarlas y eliminarlas.
+- Usando ramas, varios desarrolladores pueden trabajar en paralelo en el mismo proyecto simultáneamente. Podemos usar el comando git branch para crearlas, listarlas y eliminarlas.
 
 
 **git branch <nombre-de-la-rama>
@@ -35,6 +35,8 @@ git branch -d <nombre-de-la-rama>
 
 ## Git checkout
 
-Usaremos git checkout principalmente para cambiarte de una rama a otra. También lo podemos usar para chequear archivos y commits
-  
+- Usaremos git checkout principalmente para cambiarte de una rama a otra. También lo podemos usar para chequear archivos y commits
+    
 git checkout <nombre-de-la-rama>
+
+## Git status  
