@@ -94,15 +94,22 @@ git push --set-upstream <nombre-remoto> <nombre-de-tu-rama>
   
   o
   
-  git push -u origin <nombre-de-tu-rama>
+  **git push -u origin <nombre-de-tu-rama>**
   
   
   ## Git pull
   
   -Se utiliza para recibir actualizaciones del repositorio remoto. Este comando es una combinación del git fetch y del git merge lo cual significa que cundo usemos el git pull recogeremos actualizaciones del repositorio remoto (git fetch) e inmediatamente aplicamos estos últimos cambios en local (git merge).
   
-git pull <nombre-remoto>
+**git pull <nombre-remoto>**
   
-  **gdgdgdgdgdgd**
+  
+  ##Git revert
+ 
+  - Cuando necesitamos deshacer los cambios que hemos hecho. Hay varias maneras para deshacer nuestros cambios en local y/o en remoto (dependiendo de lo que necesitemos), pero necesitaremos utilizar cuidadosamente estos comandos para evitar borrados no deseados.
+  
+  Una manera segura para deshacer nuestras commits es utilizar git revert. Para ver nuestro historial de commits, primero necesitamos utilizar el  git log -- oneline:
+  
+
   
   
