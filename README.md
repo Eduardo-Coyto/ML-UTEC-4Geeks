@@ -42,5 +42,12 @@ git checkout <nombre-de-la-rama>
 ## Git status  
   
  - El comando de git status nos da toda la información necesaria sobre la rama actual
+ 
+  git status
   
-  ** git status
+-Podemos encontrar información como:
+
+1)  Si la rama actual está actualizada
+2)  Si hay algo para confirmar, enviar o recibir (pull).
+3)  Si hay archivos en preparación (staged), sin preparación(unstaged) o que no están recibiendo seguimiento (untracked)
+4)  Si hay archivos creados, modificados o eliminados
