@@ -45,9 +45,13 @@ git checkout <nombre-de-la-rama>
  
   git status
   
--Podemos encontrar información como:
+- Podemos encontrar información como:
 
 1)  Si la rama actual está actualizada
 2)  Si hay algo para confirmar, enviar o recibir (pull).
 3)  Si hay archivos en preparación (staged), sin preparación(unstaged) o que no están recibiendo seguimiento (untracked)
 4)  Si hay archivos creados, modificados o eliminados
+  
+  ![image](https://user-images.githubusercontent.com/79756539/166966442-a847f00a-258e-4d0c-8907-5a5c72ba589f.png)
+
+  
