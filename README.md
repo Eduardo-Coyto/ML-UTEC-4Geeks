@@ -55,3 +55,15 @@ git checkout <nombre-de-la-rama>
   ![image](https://user-images.githubusercontent.com/79756539/166966442-a847f00a-258e-4d0c-8907-5a5c72ba589f.png)
 
   
+## Git add
+  
+  -Cuando creamos, modificamos o eliminamos un archivo, estos cambios suceden en local y no se incluirán en el siguiente commit.
+  Añadir un único archivo:
+  
+  git add <archivo>
+  
+  Añadir todo de una vez:
+  
+  git add -A
+  
+  
