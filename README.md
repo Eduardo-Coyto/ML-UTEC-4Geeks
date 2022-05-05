@@ -2,7 +2,8 @@
 1er Bootcamp en Machine Learning e Inteligencia Artificial Uruguay
 ## Git clone
 - Básicamente realiza una copia idéntica de la última versión de un proyecto en un repositorio y la guarda en tu ordenador.
-...
+
+
 **git clone <https://link-con-nombre-del-repositorio>**
 
 ## Git branch
