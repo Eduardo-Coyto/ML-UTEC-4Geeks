@@ -19,8 +19,6 @@ Cada lista tiene los mismos conceptos básicos:
 ![image](https://user-images.githubusercontent.com/79756539/167164260-97676799-863c-419a-99e9-63c28a105ab4.png)
 
 
-![¿qué es una lista?](../../assets/images/7ed2c414-0d00-4e68-b659-b65c26d1983a.png)
-
 > :point_up: Las posiciones de la comienzan con **cero (0)**; el primer elemento es el elemento en la posición **cero (0)**
 
 ## ¿Como Declarar una Lista?
@@ -343,3 +341,5 @@ Otras cosas importantes a tener en cuenta:
 
 + Estamos llamando a la función `get_person_info` dos veces, sin usar funciones tendríamos que usar más código porque no tendríamos ninguna opción para reutilizar la función.
 + La función `get_average` es obtener el valor promedio en un array dado. No sabe nada más ¡Y eso es genial! Al separar tu código en pequeñas funciones, puedes concentrarte en una cosa a la vez.
+
+
