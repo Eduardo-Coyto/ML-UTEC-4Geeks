@@ -16,6 +16,9 @@ Cada lista tiene los mismos conceptos básicos:
 
 **Index:** es la posición del elemento.
 
+![image](https://user-images.githubusercontent.com/79756539/167164260-97676799-863c-419a-99e9-63c28a105ab4.png)
+
+
 ![¿qué es una lista?](../../assets/images/7ed2c414-0d00-4e68-b659-b65c26d1983a.png)
 
 > :point_up: Las posiciones de la comienzan con **cero (0)**; el primer elemento es el elemento en la posición **cero (0)**
