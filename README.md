@@ -60,7 +60,7 @@ _Borrar una rama_
   
   _Añadir un único archivo:_
   
-  git add <archivo>
+  git add .<archivo>
   
   _Añadir todo de una vez:_
   
