@@ -103,7 +103,7 @@ _Borrar una rama_
 **git pull <nombre-remoto>**
   
   
-  ##Git revert
+  ## Git revert
  
   - Cuando necesitamos deshacer los cambios que hemos hecho. Hay varias maneras para deshacer nuestros cambios en local y/o en remoto (dependiendo de lo que necesitemos), pero necesitaremos utilizar cuidadosamente estos comandos para evitar borrados no deseados.
   
