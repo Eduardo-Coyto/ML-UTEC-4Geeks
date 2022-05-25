@@ -142,3 +142,6 @@ _Borrar una rama_
   -Git merge básicamente integra las características de tu rama con todos los commits realizados a las ramas dev (o master).  Es importante que recuerdes que tienes que estar en esa rama específica que quieres fusionar  con tu rama de características.
   
   
+**Fuente para consultar**
+  
+  https://www.atlassian.com/es/git/tutorials/syncing
