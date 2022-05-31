@@ -145,3 +145,5 @@ _Borrar una rama_
 **Fuente para consultar**
   
   https://www.atlassian.com/es/git/tutorials/syncing
+  
+  file:///C:/Program%20Files/Git/mingw64/share/doc/git-doc/gittutorial.html
