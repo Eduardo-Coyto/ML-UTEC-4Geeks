@@ -146,4 +146,8 @@ _Borrar una rama_
   
   https://www.atlassian.com/es/git/tutorials/syncing
   
-  file:///C:/Program%20Files/Git/mingw64/share/doc/git-doc/gittutorial.html
+  ## Git User Manual
+  
+  _copiar y pegar el path_
+  
+  file:///C:/Program%20Files/Git/mingw64/share/doc/git-doc/user-manual.html
