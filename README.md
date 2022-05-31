@@ -42,7 +42,7 @@ _Borrar una rama_
   
  - El comando de git status nos da toda la información necesaria sobre la rama actual
  
-** git status**
+**git status**
   
 - Podemos encontrar información como:
 
