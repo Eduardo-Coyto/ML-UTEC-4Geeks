@@ -146,7 +146,7 @@ SAVEPOINT savepoint_name;
 ```
 Cuando usas este comando puedes ponerle un **name** o nombre a los diferente estados de tu base de datos y así usar el comando ROLLBACK cuando quieras.
 
-![SQL](../../assets/images/sql-1.png)
+![image](https://user-images.githubusercontent.com/79756539/173452793-f0a9ad2f-ec44-4890-8dc0-5c7da01e4390.png)
 
 Digamos que vamos a comer pizza y nuestra pizza tiene tres ingredientes de base:
 mozzarella, tomate y aceitunas.  Nuestra tabla se llamaria 'PIZZA' y se vería de la siguiente manera:
