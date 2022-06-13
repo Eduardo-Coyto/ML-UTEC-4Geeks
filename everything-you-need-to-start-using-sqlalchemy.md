@@ -1,50 +1,59 @@
-## What is SQL Alchemy
+## ¿Qué es SQL Alchemy?
 
-SQL Alchemy is an [Object-Relational Mapper / Mapping-tool](https://en.wikipedia.org/wiki/Object-relational_mapping), or ORM: a library that developers use to create databases and manipulate their data without the need of knowing/using SQL.
 
-There are other alternatives to it like SQLAlchemy like Peewee, and other languages have their own ORM's like PHP Eloquent or Java Hibernate.
+SQLAlchemy es un [Object-Relational Mapper / Mapping-tool](https://en.wikipedia.org/wiki/Object-relational_mapping), o un ORM, es decir una librería que los desarrolladores utilizan para crear bases de datos y manipular sus datos sin la necesidad de conocer / usar SQL.
 
-## Why Use ORM?
+Existen otras alternativas como SQL Alchemy o Peewee, y otros lenguajes tienen sus propios ORMs como PHP Eloquent o Java Hibernate.
 
-ORM's have gained popularity because dealing with SQL language directly requires a lot of effort in many cases. The goal of any ORM is to simplify the maintenance of your data. This is done by creating ***objects*** to deal with database interactions.
 
-With ORM you won't have to type SQL again (95% of the time) and you will be able to work with objects.
+## ¿Por qué usar un ORM?
 
-### Example:
+Los ORM han ganado popularidad debido a que lidiar con el lenguaje SQL directamente requiere de mucho esfuerzo en la mayoría de los casos. El objetivo del ORM entonces es simplificar la mantención de tus datos.
 
-To insert an user with SQL you have to type:
+Básicamente, con ORM no tendrás que escribir SQL otra vez (95% del tiempo) y podrás trabajar con objetos.
+
+### Por ejemplo:
+
+Para insertar un usuario con SQL tienes que escribir:
 
 ```sql
-INSERT INTO user (name, last_name) VALUES ('Bob', 'Ross');
+INSERT INTO user (name, last_name) VALUES ('Juan', 'McDonals');
 ```
 
-With an ORM your code keeps being familiar like this:
+Con un ORM tu código sigue siendo un código familiar como este:
 
 ```py
 user = User()
-user.name = 'Bob'
-user.last_name = 'Ross'
+user.name = 'Juan'
+user.last_name = 'McDonals'
 
+# agrega el user a la base de datos
+db.session.add(user)
+
+# parecido al commit de GIT lo que hace es guardar todos los cambios que hayas hecho
 db.session.commit()
 ```
-You can just say: `db.session.commit()` and all the things you have done in your code will be translated into SQL language code.
 
-## Let's review the most typical database operation
+Basta con que digas: `db.session.commit()` y todo lo que hayas hecho con tu código se traducirá a código de lenguaje SQL.
 
-## Creating our database
+## Revisemos la operación de base de datos más típica
+
+### Creando nuestra base de datos
+
+El primer paso sería definir nuestro modelo
 
 
-The first step will be defining our model
 
 ```py
 class Person(Base):
-    __tablename__ = 'person'
-    # Here we define columns for the table person
-    # Notice that each column is also a normal Python instance attribute.
+
+    # Aquí definimos el nombre de la tabla person.
+    # Ten en cuenta que cada columna es también un atributo normal de primera instancia de Python.
+
     id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
 
-
+    # el metodo serialize convierte el objeto en un diccionario
     def serialize(self):
         return {
             "id": self.id,
@@ -52,143 +61,129 @@ class Person(Base):
         }
   ```
 
-### INSERT: Inserting a Database Record
-
-All you have to do is create a new Person object, add it into the database session and commit!
-Just replace `<username_value>` and `<email_value>` with the real values you want added below.
+### INSERT: Insertando un registro en la base de datos
 
 ```py
 person = Person(username=<username_value>, email=<email_value>)
 db.session.add(person)
 db.session.commit()
-```
+  ```
 
-### SELECT: Fetching / Retrieving Records
+### SELECT: Buscando o recuperando registros
 
-There are 3 ways to retrieve data from a database:
-    1. Fetch all record from a particular Table/Model using `MyModel.query.all()`
-    2. Fetch one single record based on its primary key using `MyModel.query.get(id)`
-    3. Fetch a group of records based on a query `Person.query.filter_by(arg1=value, arg2=value, ...)`
+Hay 3 formas para devolver data de la base de datos:
+    1. Buscar/Recuperar/Devolver todos los registros desde un Table/Model en particular usando `MyModel.query.all()`
+    2. Buscar/Recuperar/Devolver un solo registro basado en su primary key usando `MyModel.query.get(id)`
+    3. Buscar/Recuperar/Devolver un grupo de registros basado en su consulta `Person.query.filter_by(arg1=value, arg2=value, ...)`
 
 ```py
-# here is how to fetch all people
+# aqui es como se buscan todas las personas
 all_people = Person.query.all()
 all_people = list(map(lambda x: x.serialize(), all_people))
 
-# here is how to fetch a group of people with name = alex
+# aqui es como se busca un grupo de personas con name = alex
 all_people = Person.query.filter_by(name='alex')
 all_people = list(map(lambda x: x.serialize(), all_people))
 
-# here is how to fetch the person with id=3 (only works with primary keys)
+# aquí es cómo se busca a una persona con id = 3 (solo funciona con las primary key)
 person = Person.query.get(3)
 ```
 
-### DELETE: Removing a Database Record.
+### DELETE: Eliminando un registro de la base de datos.
 
-All you have to do is create a new Person object, add it into the database session and commit!
+Todo lo que tiene que hacer es crear un nuevo objeto Person, agregarlo a la sesión de la base de datos y ¡commit!
 
 ```py
 person = Person.query.get(3)
-db.session.delete(person)
+person.delete()
 db.session.commit()
-```
+  ```
 
-### UDPATE: Updating a Record
+### UDPATE: Actualizar un registro.
 
-To update you need first to retrieve/select the record from the database, then you can update whatever property you like and commit again.
-
+Para actualizar, primero necesitas devolver/seleccionar el registro de la base de datos, luego puedes actualizar la propiedad que desees y hacer commit nuevamente.
 ```py
 person = Person.query.get(3)
 person.name = "Bob"
 db.session.commit()
 ```
-## Transactions
 
-A transaction is a sequence of operations (like INSERT, UPDATE, SELECT) made on your database. In order for a transaction to be completed a number of operations within a group must be successful. If one operation fails, the whole transaction fails.
+## Transacciones
 
+Una transacción es una secuencia de operaciones (como por ej. INSERT, UPDATE, SELECT) realizadas en tu base de datos. Para que una transacción esté completa una cierta cantidad de operaciones dentro de un grupo deben ser exitosas. Si una operación falla, toda la transacción falla.
 
-Transactions have the following 4 standard properties(known as ACID properties):
+Las transacciones tienen las siguientes 4 propiedades estándar (conocidas como propiedades ACID: español significa Atomicidad, Consistencia, Aislamiento y Durabilidad )
 
 ![Transactions](../../assets/images/tran-1.png)
 
-A transaction ends with COMMIT or ROLLBACK. 
+Una transacción termina con COMMIT o ROLLBACK. 
 
-### COMMIT: session.commit() 
+### Comando COMMIT 
 
-COMMIT command is used to permanently save any transaction into the database.
+El comando COMMIT se usa para guardar de manera permanente los cambios realizados en una transacción dentro de la base de datos. 
 
-When you use INSERT, UPDATE or DELETE, the changes made by these commands are not permanent, the changes made by these commands can be undone or "rolled back". 
+Cuando usas INSERT, UPDATE o DELETE, los cambios realizados con estos comandos no son permanentes, los cambios hechos pueden desahacerse o "podemos volver atrás".
 
-If you use the COMMIT command though the changes to your database are permanent.
+Pero cuando usas el comando COMMIT los cambios en tu base de datos serán permanentes.  
 
-### ROLLBACK
+### Comando ROLLBACK 
 
-It restores the database to last your last COMMIT. You can also use it with SAVEPOINT command to jump to a savepoint in a ongoing transaction.
+Restaura tu base de datos hasta tu último COMMIT. También puedes usarlo con el comando SAVEPOINT para saltar a un punto que hayas guardado durante una transacción en curso.
 
-Also, if you use UPDATE to make changes to your database, you can undo them by using the ROLLBACK command but only if you haven't commited those changes like this:
+
+Del mismo modo, si usas UPDATE para hacer cambios en tu base de datos, puedes deshacerlos usando el comando ROLLBACK pero sólo si aún no has usado el comando COMMIT de esta forma:
 
 
 ```jsx
-db.session.rollback()
+ROLLBACK TO savepoint_name;
 ```
-### CHECKPOINT OR SAVEPOINT
+### Comando SAVEPOINT 
 
-This command is used to temporarily to save a transaction so that you can go back to a certain point by using the ROLLBACK command whenever needed, you can use like this:
+Este comando se usa para guardar temporalmente una transacción para así poder volver a cierto punto utilizando el comando ROLLBACK si así lo necesitas, puedes usarlo así:
+
 ```jsx
-db.session.begin_nested()
+SAVEPOINT savepoint_name;
 ```
-This command may be called many times, and it will issue a new CHECKPOINT with an ID.
+Cuando usas este comando puedes ponerle un **name** o nombre a los diferente estados de tu base de datos y así usar el comando ROLLBACK cuando quieras.
 
 ![SQL](../../assets/images/sql-1.png)
 
-Now let's say we go out to have some pizza. Our pizza comes with three ingredients basic ingredients:
-mozzarella, tomato, olives. Our table called 'PIZZA' would look like this: 
+Digamos que vamos a comer pizza y nuestra pizza tiene tres ingredientes de base:
+mozzarella, tomate y aceitunas.  Nuestra tabla se llamaria 'PIZZA' y se vería de la siguiente manera:
 
 ![SQL](../../assets/images/sql-2.png)
 
-But we have a list of extra ingredients we can add to it: first we choose meat but then we change our mind and we want to add mushrooms instead. We would also like to add some pepperoni and bacon. Let see how could we do that:
+Pero tenemos una lista de ingredientes extra que podemos añadirle: escogemos carne pero luego cambiamos de parecer y queremos champiñones. También nos gustaría añadirle pepperoni y tocino. Veamos como se vería nuestra transacción:
+
 
 ```jsx
-# we insert a new ingredient into out pizza
-ingredient = Ingredient()
-ingredient.name = 'meat'
-ingredient.id = 4
-db.session.add(ingredient)
+INSERT INTO class PIZZA(4, 'meat');
 
-# now we COMMIT the transaction and save it into the database
-db.session.commit()
+COMMIT; 
 
-ingredient = Ingredient.query.get(4)
-ingredient.name = mushrooms
+UPDATE class SET ingredient = 'mushrooms' WHERE id '4'
 
-# save a checkpoint
-checkpoint_a = db.session.begin_nested()
+SAVEPOINT A;
 
-# add pepperoni
-ingredient = Ingredient()
-ingredient.name = 'pepperoni'
-db.session.add(ingredient)
+INSERT INTO class PIZZA (5, 'pepperoni')
 
-# one last checkpoint before adding bacon ingredient
-checkpoint_b = db.session.begin_nested()
+SAVEPOINT B
 
-# add bacon
-ingredient = Ingredient()
-ingredient.name = 'bacon'
-db.session.add(ingredient)
+INSERT INTO class PIZZA (6, 'bacon')
 ```
 
-Now our 'PIZZA' has the following ingredients:
+Ahora nuestra 'Pizza' tiene los siguientes ingredientes:
 
 ![SQL](../../assets/images/sql-3.png)
 
-Now we have decided we no longer want bacon, so we use ROLLBACK:
+Ahora acabamos de decir que ya no queremos tocino, asi que usamos ROLLBACK:
 
 ```jsx
-checkpoint_b.rollback()
+ROLLBACK TO B;
 ```
-and our pizza looks like this:
+y nuestra 'PIZZA' se ve así:
 
 ![SQL](../../assets/images/sql-4.png)
 
-....I'm a bit hungry after reading this lesson!! aren't you??
+....me ha dado hambre luego de leer esta lección ¿¿tú no tienes hambre??
+
