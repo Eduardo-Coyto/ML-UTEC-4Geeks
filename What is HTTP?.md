@@ -75,3 +75,7 @@ Los códigos de estado HTTP,[puedes leer más al respecto aquí](https://develop
 + `python>3xx` – Redirección
 + `python>4xx` – Cliente hizo algo mal
 + `python>5xx` – Servidor hizo algo mal
+
+
+https://developer.mozilla.org/es/docs/Web/HTTP/Status
+
