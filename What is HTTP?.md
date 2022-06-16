@@ -16,7 +16,7 @@ Básicamente, es un protocolo de transferencia de texto que opera a través de s
 
 # ¿Cómo funciona HTTP?
 
-![HTTP](../../assets/images/http-3.png)
+src/assets/images/2fd53b0a-5243-4440-8fc6-7fd74ac5a46e.gif
 
 Este protocolo funciona a través de solicitudes y respuestas el cliente (por ejemplo, un navegador de internet) y un servidor (por ejemplo, los computadores en donde residen sitios web). 
 
