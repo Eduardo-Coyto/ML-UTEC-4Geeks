@@ -1,0 +1,13 @@
+{
+	"title" : "Calculus and Algebra problems with Python",
+	"slug" : "calculus-and-algebra-problems-with-python",
+	"preview": "https://github.com/breatheco-de/calculus-and-algebra-problems-with-python/blob/main/preview.jpeg?raw=true",
+	"solution": "https://github.com/breatheco-de/calculus-and-algebra-problems-with-python/blob/main/solutions.ipynb",
+	"status": "published",
+	"translations": ["es", "us"],
+	"technologies": ["matplotlib", "numpy", "pandas"],
+	"difficulty": "beginner",
+	"syntax": "python",
+	"duration" : 2,
+	"description" : "Use your numpy, pandas and matplotib skills to practice a little about calcus and algebra"
+}
