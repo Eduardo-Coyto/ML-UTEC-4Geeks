@@ -114,7 +114,8 @@ Train test split is a model validation procedure that allows you to simulate how
 
 3. Test the model on the testing set (“X_test” and “y_test” in the image) and evaluate the performance.
 
-![train_test_split](../assets/train_test_split.jpg)
+![image](https://user-images.githubusercontent.com/79756539/176036193-163e92c5-fa22-4747-9d7c-8947b15a4bd4.png)
+
 
 Example code:
 
