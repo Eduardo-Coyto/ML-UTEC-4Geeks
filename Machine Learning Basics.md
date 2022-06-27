@@ -155,7 +155,7 @@ Several models are trained and evaluated, with every piece of data being held ou
 
 It is a more reliable way to validate models but is more computationally costly. For example, 5-fold cross validation requires training and validating 5 models instead of 1.
 
-![cross_validation](../assets/cross_validation.jpg)
+![image](https://user-images.githubusercontent.com/79756539/176036352-d805db85-77fc-446a-a3a1-c2025566f806.png)
 
 Some cross-validation techniques:
 
