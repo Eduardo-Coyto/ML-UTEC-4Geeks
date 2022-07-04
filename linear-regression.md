@@ -90,7 +90,7 @@ print('Slope: {}\nIntercept: {}'.format(m, b))
     Intercept: -8.549690202482191
 
   
-![linear-regression-result](../assets/linear-regression-result.jpg)
+![image](https://user-images.githubusercontent.com/79756539/177218900-0b271cbe-bef1-4721-962a-6ec13dd85e96.png)
     
 Scikit-learn Linear regression makes it easier for us to implement and optimize linear regression models. You can see the scikit-learn linear regression documentation here: https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html
 
