@@ -154,7 +154,7 @@ plt.show()
 
 ```
 
-![non-linear-data](../assets/non-linear-data.jpg)
+![image](https://user-images.githubusercontent.com/79756539/177218954-da1d512c-f587-40ca-804a-bfb48bb92087.png)
 
 ```py
 #split the data
@@ -178,7 +178,7 @@ plt.show()
 
 ```
 
-![linreg_on_nonlinear_data](../assets/linreg_on_nonlinear_data.jpg)
+![image](https://user-images.githubusercontent.com/79756539/177218973-a8fc8e17-b471-4fbe-834c-4c2b126f3645.png)
 
 Now we will convert the input to polynomial terms by using the degree as 2 because of the equation we have used, the intercept is 2. 
 
@@ -215,7 +215,7 @@ plt.legend()
 plt.show()
 
 ```
-![polynomial_regression](../assets/polynomial_regression.jpg)
+![image](https://user-images.githubusercontent.com/79756539/177219002-37385c47-6991-4806-b89a-a85d4fd90305.png)
 
 After converting to polynomial terms we fit the linear regression which is now working as polynomial regression. Our coefficient was 0.9 and it has predicted 0.88 and intercept was 2 and it has given 1.9 which is very close to the original and the model can be said as a generalized model.
 
@@ -226,7 +226,7 @@ Having more features may seem like a perfect way for improving the accuracy of o
 
 Let's see an overfitted non-linear example:
 
-![underfitting_vs_overfitting](../assets/underfitting_vs_overfitting.jpg)
+![image](https://user-images.githubusercontent.com/79756539/177219025-a0e30c28-2ebe-417b-99c1-6ca27a2acad2.png)
 
 If not filtered and explored up front, some features can be more destructive than helpful, repeat information that already expressed by other features and add high noise to the dataset.
 
