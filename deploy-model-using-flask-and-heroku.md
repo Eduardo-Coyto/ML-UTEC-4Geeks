@@ -403,11 +403,11 @@ We are ready! Push your project to Heroku! If you wish to do it directly on Hero
 
 - Scroll down and choose 'manual deploy'. After making sure you are on the branch you want to deploy (in this case: main), then clic on 'Deploy branch'. You will see all the required packages been installed like the following image:
 
-![deploying_branch](../assets/deploying_branch.jpg)
+![image](https://user-images.githubusercontent.com/79756539/182724318-10f03e0b-41f8-4228-bc8b-1c7decf800b0.png)
 
 - When finished, it should look like the following screenshot:
 
-![deployed_to_heroku](../assets/deployed_to_heroku.jpg)
+![image](https://user-images.githubusercontent.com/79756539/182724348-3956356f-b5b1-48d2-8adc-6c789afa8205.png)
 
 - Copy that link and paste it in your browser to test your app.
 
